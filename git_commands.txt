@@ -1,0 +1,100 @@
+Git commands used for this assignment
+======================================
+
+Version and local identity checks
+---------------------------------
+git --version
+Shows the installed Git version.
+
+git config user.name
+Reads the configured author name used for commits.
+
+git config user.email
+Reads the configured author email used for commits.
+
+Repository setup and initial commit
+-----------------------------------
+git init -b main
+Creates a new local repository and names its initial branch main.
+
+git add index.html about.html
+Stages the two initial website files.
+
+git commit -m "Initial website structure"
+Records the initial project state in the repository history.
+
+git status --short --branch
+Shows the current branch and whether files are modified or staged.
+
+Main-branch change and feature branch
+-------------------------------------
+git add index.html
+Stages the home-page change.
+
+git commit -m "Describe Git workflow on home page"
+Records the second commit on main.
+
+git switch -c feature
+Creates the feature branch and switches to it.
+
+git add about.html
+Stages the feature-branch change to the about page.
+
+git commit -m "Expand project overview on feature branch"
+Records the feature change on the feature branch.
+
+git switch main
+Switches back to main before merging.
+
+git merge --no-ff feature -m "Merge feature branch"
+Merges feature into main and records an explicit merge commit.
+
+Ignore rules
+------------
+git add .gitignore
+Stages the ignore rules for *.log files and the temp/ folder.
+
+git commit -m "Ignore log files and temporary folder"
+Records the .gitignore configuration.
+
+git check-ignore sample.log temp\sample.txt
+Verifies that a sample log file and file inside temp/ are ignored.
+
+Undo demonstration
+------------------
+git add release-note.txt
+Stages a temporary file for the extra commit that will be undone.
+
+git commit -m "Add temporary release note"
+Creates the additional commit used for the undo demonstration.
+
+git revert --no-edit HEAD
+Safely undoes the last commit by creating a new inverse commit.
+
+git show --stat --oneline HEAD
+Displays the revert commit and confirms that it removed release-note.txt.
+
+History and GitHub
+------------------
+git log --oneline --graph --decorate --all
+Displays the commit graph, including both branches and the merge.
+
+git remote add origin https://github.com/saisathvikalkanti/Git_Workflow_Test_Case_Assignment.git
+Connects the local repository to the public GitHub repository.
+
+git remote -v
+Confirms the configured fetch and push URLs for origin.
+
+git push -u origin main feature
+Publishes both branches and sets their upstream tracking branches.
+
+Submission files and final push
+-------------------------------
+git add git_commands.txt assignment_report.pdf
+Stages the command log and the assignment PDF for submission.
+
+git commit -m "Add assignment submission files"
+Records the assignment deliverables in the repository.
+
+git push
+Publishes the final submission commit to the tracked main branch.
